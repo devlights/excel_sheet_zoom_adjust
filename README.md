@@ -1,0 +1,2 @@
+# excel_sheet_zoom_adjust
+Excelを開いて各シートのズーム倍率を揃えていくスクリプト
