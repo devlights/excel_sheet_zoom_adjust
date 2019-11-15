@@ -25,7 +25,7 @@ def go(target_dir: str, zoom: int):
         return
 
     if zoom <= 0:
-        print(f'illegal zoom value [{zoom}')
+        print(f'illegal zoom value [{zoom}]')
         return
 
     try:
@@ -57,7 +57,7 @@ def go(target_dir: str, zoom: int):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         usage='python main.py -d /path/to/excel/dir -z zoom-value(e.g. 70)',
-        description='Excelの各シートのズーム倍率を指定された値に揃えます.\n実行するには Excelファイルがあるディレクトリ と ズーム倍率 を指定刷る必要があります',
+        description='Excelの各シートのズーム倍率を指定された値に揃えます.',
         add_help=True
     )
 
