@@ -8,6 +8,7 @@
 # [参考にした情報]
 #   - https://stackoverflow.com/a/37635373
 #################################################################
+import argparse
 
 
 # noinspection SpellCheckingInspection
@@ -53,7 +54,15 @@ def go(target_dir: str, zoom: int):
 
 
 if __name__ == '__main__':
-    target_directory = r'/path/to/excel/dir'
-    zoom_value = 70
+    parser = argparse.ArgumentParser(
+        usage='python main.py -d /path/to/excel/dir -z zoom-value(e.g. 70)',
+        description='Excelの各シートのズーム倍率を指定された値に揃えます.\n実行するには Excelファイルがあるディレクトリ と ズーム倍率 を指定刷る必要があります',
+        add_help=True
+    )
 
-    go(target_directory, zoom_value)
+    parser.add_argument('-d', '--directory', help='対象ディレクトリ', required=True)
+    parser.add_argument('-z', '--zoom', help='ズーム倍率', type=int, default=70)
+
+    args = parser.parse_args()
+
+    go(args.directory, args.zoom)
